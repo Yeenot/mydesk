@@ -48,6 +48,10 @@ export const routes: Routes = [
     component: NotFoundComponent,
   },
   {
+    path: '',
+    redirectTo: 'login',
+  },
+  {
     path: '**',
     redirectTo: '404',
   }

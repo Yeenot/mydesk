@@ -10,12 +10,10 @@ services:
     volumes:
       - .:/app
     ports:
-      - "4500:4200" # Map container port 80 to host port 4300
-    environment:
-      API_URL: http://api:8080 # Point to the Rust API
+      - "4500:4200"
     networks:
-      - me_manager_network
+      - mydesk_network
 
 networks:
-  me_manager_network:
+  mydesk_network:
     driver: bridge
