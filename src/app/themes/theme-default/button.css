@@ -1,0 +1,46 @@
+@layer components {
+  button {
+    @apply cursor-pointer;
+  }
+
+  .app__btn {
+    @apply
+      relative
+      flex
+      w-full
+      justify-center
+      items-center
+      
+      rounded-md
+      px-3
+      py-1.5
+
+      text-sm/6
+      font-semibold
+
+      bg-neutral
+      border-neutral
+      border-1
+      shadow-xs
+
+      focus-visible:outline-2
+      focus-visible:outline-offset-2
+
+      cursor-pointer;
+  }
+
+  /* Primary */
+  .app__btn-primary {
+    @apply bg-primary text-light border-primary;
+  }
+
+  /* Secondary */
+  .app__btn-secondary {
+    @apply bg-secondary text-light border-secondary;
+  }
+
+  /* Light */
+  .app__btn-light {
+    @apply bg-light text-primary border-primary;
+  }
+}

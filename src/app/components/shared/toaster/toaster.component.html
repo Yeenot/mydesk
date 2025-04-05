@@ -1,0 +1,13 @@
+<div class="app__toaster">
+  <div
+    *ngFor="let toast of toastService.toasts()"
+    class="app__toaster-item"
+    [ngClass]="{
+      'bg-success': toast.type === 'success',
+      'bg-danger': toast.type === 'error',
+      'bg-info': toast.type === 'info'
+    }"
+  >
+    {{ toast.message }}
+  </div>
+</div>

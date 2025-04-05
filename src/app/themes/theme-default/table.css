@@ -1,0 +1,36 @@
+@layer components {
+  table {
+    @apply min-w-full border border-gray-300 text-sm text-left text-gray-800 bg-white shadow-sm rounded-md;
+  }
+  
+  table thead {
+    @apply bg-gray-100 text-xs uppercase text-gray-600;
+  }
+  
+  table thead th {
+    @apply px-6 py-3;
+  }
+  
+  table tbody {
+    @apply divide-y divide-gray-100;
+  }
+  
+  table tbody tr {
+    @apply hover:bg-gray-100;
+  }
+
+  table tbody td {
+    @apply px-6 py-4;
+  }
+
+  table thead th:last-child,
+  table tbody td:last-child {
+    @apply text-center;
+  }
+
+  table button {
+    @apply text-blue-600 hover:underline;
+  }
+}
+
+

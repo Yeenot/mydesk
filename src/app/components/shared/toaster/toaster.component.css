@@ -1,0 +1,12 @@
+@reference "tailwindcss";
+@reference "../../../themes/theme-default/main.css";
+
+.app__toaster {
+  @apply fixed top-4 right-4 z-100 space-y-2;
+}
+
+.app__toaster-item {
+  @apply px-4 py-2 rounded shadow text-sm text-white;
+  animation: fadeInOut 3.5s ease-in-out forwards;
+}
+

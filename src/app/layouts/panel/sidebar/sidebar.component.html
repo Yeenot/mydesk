@@ -1,0 +1,4 @@
+<aside class="bg-light border-r border-gray-200 shadow-md h-full w-50 px-2 py-4">
+  <app-admin-sidebar *ngIf="isSuperAdmin()"></app-admin-sidebar>
+  <app-user-sidebar *ngIf="!isSuperAdmin()"></app-user-sidebar>
+</aside>

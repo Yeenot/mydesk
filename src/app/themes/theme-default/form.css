@@ -1,0 +1,33 @@
+@layer components {
+  .app__form {
+    @apply bg-light p-6 rounded-md shadow-sm;
+  }
+
+  .app__form-control {
+    @apply
+      block
+      w-full
+      rounded-md
+      px-3
+      py-1.5
+      text-base
+
+      bg-light
+      outline-gray-300
+
+      outline-1
+      -outline-offset-1
+      focus:outline-2
+      focus:-outline-offset-2
+
+      sm:text-sm/6;
+  }
+
+  .app__form-control:focus {
+    @apply outline-primary;
+  }
+
+  .app__form-label {
+      @apply block text-sm/6 font-medium;
+  }
+}

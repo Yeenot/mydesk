@@ -1,0 +1,73 @@
+<div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+  <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+    <img
+      class="mx-auto h-10 w-auto"
+      src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
+      alt="Me Manager"
+    />
+    <h2
+      class="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900"
+    >
+      Sign in to your account
+    </h2>
+  </div>
+
+  <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+    <form class="space-y-6" [formGroup]="loginForm">
+      <div>
+        <label for="login-email" class="app__form-label">Email address</label>
+        <div class="mt-2">
+          <app-form-field name="email">
+            <input
+              class="app__form-control"
+              type="email"
+              formControlName="email"
+              id="login-email"
+              autocomplete="email"
+              required
+            />
+          </app-form-field>
+        </div>
+      </div>
+      <div>
+        <div class="flex items-center justify-between">
+          <label for="login-password" class="app__form-label">Password</label>
+          <div class="text-sm">
+            <a href="#" class="app__text-primary font-semibold"
+              >Forgot password?</a
+            >
+          </div>
+        </div>
+        <div class="mt-2">
+          <app-form-field name="password">
+            <input
+              class="app__form-control"
+              type="password"
+              formControlName="password"
+              id="login-password"
+              autocomplete="current-password"
+              required
+            />
+          </app-form-field>
+        </div>
+      </div>
+
+      <div>
+        <button
+          type="button"
+          class="app__btn app__btn-primary"
+          (click)="login()"
+        >
+          Sign in
+        </button>
+      </div>
+    </form>
+
+    <p class="mt-10 text-center text-sm/6">
+      Not a member?
+      <a href="#" class="font-semibold app__text-primary"
+        >Start a 14 day free trial</a
+      >
+    </p>
+  </div>
+</div>

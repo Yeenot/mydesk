@@ -1,0 +1,56 @@
+<div class="max-w-3xl app__form">
+  <h2>Create Client</h2>
+  <form class="space-y-6">
+    <div>
+      <label for="client-name" class="app__form-label">Name</label>
+      <div class="mt-2">
+        <input
+          class="app__form-control"
+          type="text"
+          name="name"
+          id="client-name"
+          required
+        />
+      </div>
+    </div>
+
+    <div>
+      <label for="client-type" class="app__form-label">Type</label>
+      <div class="mt-2">
+        <select
+          class="app__form-control"
+          id="client-type"
+          name="type"
+        >
+          <option value="" disabled selected>Select type</option>
+          <option value="sole_proprietor">Sole Proprietor</option>
+          <option value="organization">Organization</option>
+        </select>
+      </div>
+    </div>
+
+    <div>
+      <label for="client-status" class="app__form-label">Status</label>
+      <div class="mt-2">
+        <select
+          class="app__form-control"
+          id="client-status"
+          name="status"
+        >
+          <option value="" disabled selected>Select status</option>
+          <option value="1">Active</option>
+          <option value="0">Inactive</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="flex justify-end">
+      <button type="button" class="app__btn app__btn-default max-w-20 mr-2">
+        Cancel
+      </button>
+      <button type="button" class="app__btn app__btn-primary max-w-20">
+        Create
+      </button>
+    </div>
+  </form>
+</div>

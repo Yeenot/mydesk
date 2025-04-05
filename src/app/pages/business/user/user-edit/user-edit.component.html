@@ -1,0 +1,115 @@
+<div class="max-w-3xl app__form">
+  <h2>Create User</h2>
+  <form class="space-y-6" [formGroup]="userForm">
+    <div>
+      <label for="user-first-name" class="app__form-label">First Name</label>
+      <div class="mt-2">
+        <app-form-field name="first_name">
+          <input
+            class="app__form-control"
+            type="text"
+            formControlName="first_name"
+            id="user-first-name"
+            required
+          />
+        </app-form-field>
+      </div>
+    </div>
+    
+    <div>
+      <label for="user-last-name" class="app__form-label">Last Name</label>
+      <div class="mt-2">
+        <app-form-field name="last_name">
+          <input
+            class="app__form-control"
+            type="text"
+            formControlName="last_name"
+            id="user-last-name"
+            required
+          />
+        </app-form-field>
+      </div>
+    </div>
+
+    <div>
+      <label for="user-email" class="app__form-label">Email</label>
+      <div class="mt-2">
+        <app-form-field name="email">
+          <input
+            class="app__form-control"
+            type="text"
+            formControlName="email"
+            id="user-email"
+            autocomplete="email"
+            required
+          />
+        </app-form-field>
+      </div>
+    </div>
+    
+    <div>
+      <label for="user-password" class="app__form-label">Password</label>
+      <div class="mt-2">
+        <app-form-field name="password">
+          <input
+            class="app__form-control"
+            type="password"
+            formControlName="password"
+            id="user-password"
+            autocomplete="email"
+            required
+          />
+        </app-form-field>
+      </div>
+    </div>
+
+    <div>
+      <label for="user-role" class="app__form-label">Role</label>
+      <div class="mt-2">
+        <app-form-field name="role_id">
+          <select
+            class="app__form-control"
+            id="user-role"
+            formControlName="role_id"
+          >
+            <option [ngValue]="null" disabled selected>Select role</option>
+            <option *ngFor="let role of roles" [ngValue]="role.id">{{ role.name }}</option>
+          </select>
+        </app-form-field>
+      </div>
+    </div>
+
+    <div>
+      <label for="user-status" class="app__form-label">Status</label>
+      <div class="mt-2">
+        <app-form-field name="is_active">
+          <select
+            class="app__form-control"
+            id="user-status"
+            formControlName="is_active"
+          >
+            <option [ngValue]="null" disabled selected>Select status</option>
+            <option [ngValue]="true">Active</option>
+            <option [ngValue]="false">Inactive</option>
+          </select>
+        </app-form-field>
+      </div>
+    </div>
+
+    <div class="flex justify-end">
+      <a
+        class="app__btn app__btn-default max-w-20 mr-2"
+        routerLink="/businesses/services"
+      >
+        Cancel
+      </a>
+      <button
+        type="button"
+        class="app__btn app__btn-primary max-w-20"
+        (click)="submit()"
+      >
+        Create
+      </button>
+    </div>
+  </form>
+</div>

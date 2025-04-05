@@ -1,0 +1,82 @@
+<div class="max-w-3xl app__form">
+  <h2>Create Service</h2>
+  <form class="space-y-6" [formGroup]="serviceForm">
+    <div>
+      <label for="service-name" class="app__form-label">Name</label>
+      <div class="mt-2">
+        <app-form-field name="name">
+          <input
+            class="app__form-control"
+            type="text"
+            formControlName="name"
+            id="service-name"
+            required
+          />
+        </app-form-field>
+      </div>
+    </div>
+
+    <div>
+      <label for="service-description" class="app__form-label">Description</label>
+      <div class="mt-2">
+        <app-form-field name="description">
+          <textarea
+            class="app__form-control"
+            formControlName="description"
+            id="service-description"
+            rows="3"
+          ></textarea>
+        </app-form-field>
+      </div>
+    </div>
+
+    <div>
+      <label for="service-price" class="app__form-label">Price</label>
+      <div class="mt-2">
+        <app-form-field name="price">
+          <input
+            class="app__form-control"
+            type="number"
+            formControlName="price"
+            id="service-price"
+            step="0.01"
+            required
+          />
+        </app-form-field>
+      </div>
+    </div>
+
+    <div>
+      <label for="client-status" class="app__form-label">Status</label>
+      <div class="mt-2">
+        <app-form-field name="is_active">
+          <select
+            class="app__form-control"
+            id="client-status"
+            formControlName="is_active"
+          >
+            <option [ngValue]="null" disabled selected>Select status</option>
+            <option [ngValue]="true">Active</option>
+            <option [ngValue]="false">Inactive</option>
+          </select>
+        </app-form-field>
+      </div>
+    </div>
+
+    <div class="flex justify-end">
+      <a
+        class="app__btn app__btn-default max-w-20 mr-2"
+        routerLink="/businesses/services"
+      >
+        Cancel
+      </a>
+      <button
+        type="button"
+        class="app__btn app__btn-primary max-w-20"
+        (click)="submit()"
+      >
+        Create
+      </button>
+    </div>
+  </form>
+</div>

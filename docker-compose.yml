@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+  app:
+    image: mydesk-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/app
+    ports:
+      - "4500:4200" # Map container port 80 to host port 4300
+    environment:
+      API_URL: http://api:8080 # Point to the Rust API
+    networks:
+      - me_manager_network
+
+networks:
+  me_manager_network:
+    driver: bridge

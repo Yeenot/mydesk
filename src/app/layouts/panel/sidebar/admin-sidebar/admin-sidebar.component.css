@@ -1,0 +1,23 @@
+@reference "tailwindcss";
+@reference "../../../../themes/theme-default/main.css";
+
+.app__sidebar-item {
+  @apply flex
+    flex-row
+    items-center
+    p-2
+    rounded
+
+    cursor-pointer
+
+    hover:bg-secondary/10;
+}
+
+.app__sidebar-item__parent {
+  @apply cursor-default
+    hover:bg-transparent;
+}
+
+.app__sidebar-item__label {
+  @apply ml-2;
+}

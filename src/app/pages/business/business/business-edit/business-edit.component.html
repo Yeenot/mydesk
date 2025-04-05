@@ -1,0 +1,114 @@
+<div class="max-w-3xl app__form">
+  <h2>Create Business</h2>
+  <form class="space-y-6" [formGroup]="businessForm">
+    <div>
+      <label for="business-name" class="app__form-label">Name</label>
+      <div class="mt-2">
+        <app-form-field name="name">
+          <input
+            class="app__form-control"
+            type="text"
+            formControlName="name"
+            id="business-name"
+            required
+          />
+        </app-form-field>
+      </div>
+    </div>
+
+    <div>
+      <label for="business-bio" class="app__form-label">Bio</label>
+      <div class="mt-2">
+        <app-form-field name="bio">
+          <textarea
+            class="app__form-control"
+            formControlName="bio"
+            id="business-bio"
+            rows="3"
+          ></textarea>
+        </app-form-field>
+      </div>
+    </div>
+
+    <div>
+      <label for="business-industry" class="app__form-label">Industry</label>
+      <div class="mt-2">
+        <app-form-field name="industry">
+          <select
+            class="app__form-control"
+            id="business-industry"
+            formControlName="industry"
+          >
+            <option [ngValue]="null" disabled selected>Select industry</option>
+            <option *ngFor="let industry of industries" [value]="industry.value">{{ industry.label }}</option>
+          </select>
+        </app-form-field>
+      </div>
+    </div>
+
+    <div>
+      <label for="business-country" class="app__form-label">Country</label>
+      <div class="mt-2">
+        <app-form-field name="country">
+          <select
+            class="app__form-control"
+            id="business-country"
+            formControlName="country"
+          >
+            <option [ngValue]="null" disabled selected>Select country</option>
+            <option *ngFor="let country of countries" [value]="country.value">{{ country.label }}</option>
+          </select>
+        </app-form-field>
+      </div>
+    </div>
+
+    <div>
+      <label for="business-email" class="app__form-label">Email</label>
+      <div class="mt-2">
+        <app-form-field name="email">
+          <input
+            class="app__form-control"
+            type="text"
+            formControlName="email"
+            id="business-email"
+            autocomplete="email"
+            required
+          />
+        </app-form-field>
+      </div>
+    </div>
+
+    <div>
+      <label for="business-status" class="app__form-label">Status</label>
+      <div class="mt-2">
+        <app-form-field name="is_active">
+          <select
+            class="app__form-control"
+            id="business-status"
+            formControlName="is_active"
+          >
+            <option value="" disabled selected>Select status</option>
+            <option [ngValue]="true">Active</option>
+            <option [ngValue]="false">Inactive</option>
+          </select>
+        </app-form-field>
+      </div>
+    </div>
+
+    <div class="flex justify-end">
+      <a
+        class="app__btn app__btn-default max-w-20 mr-2"
+        routerLink="/businesses"
+      >
+        Cancel
+      </a>
+      <button 
+        class="app__btn app__btn-primary max-w-20"
+        type="button"
+        (click)="submit()"
+      >
+        Create
+      </button>
+    </div>
+  </form>
+</div>

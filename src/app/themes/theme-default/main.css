@@ -1,0 +1,10 @@
+@import "./variables.css";
+@import "./typography.css";
+@import "./button.css";
+@import "./form.css";
+@import "./table.css";
+@import "./badge.css";
+
+:root {
+  @apply text-dark;
+}

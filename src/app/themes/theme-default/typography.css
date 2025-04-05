@@ -1,0 +1,9 @@
+@layer components {
+  .app__text-primary {
+    @apply text-primary;
+  }
+
+  h2 {
+    @apply text-2xl font-medium mb-4;
+  }
+}

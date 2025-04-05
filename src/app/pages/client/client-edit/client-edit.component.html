@@ -1,0 +1,99 @@
+<div class="max-w-3xl app__form">
+  <h2>Create Client</h2>
+  <form class="space-y-6" [formGroup]="clientForm">
+    <div>
+      <label for="client-first-name" class="app__form-label">First Name</label>
+      <div class="mt-2">
+        <app-form-field name="first_name">
+          <input
+            class="app__form-control"
+            type="text"
+            formControlName="first_name"
+            id="client-first-name"
+            required
+          />
+        </app-form-field>
+      </div>
+    </div>
+    
+    <div>
+      <label for="client-last-name" class="app__form-label">Last Name</label>
+      <div class="mt-2">
+        <app-form-field name="last_name">
+          <input
+            class="app__form-control"
+            type="text"
+            formControlName="last_name"
+            id="client-last-name"
+            required
+          />
+        </app-form-field>
+      </div>
+    </div>
+
+    <div>
+      <label for="client-email" class="app__form-label">Email</label>
+      <div class="mt-2">
+        <app-form-field name="email">
+          <input
+            class="app__form-control"
+            type="text"
+            formControlName="email"
+            id="client-email"
+            autocomplete="email"
+            required
+          />
+        </app-form-field>
+      </div>
+    </div>
+    
+    <div>
+      <label for="client-password" class="app__form-label">Password</label>
+      <div class="mt-2">
+        <app-form-field name="password">
+          <input
+            class="app__form-control"
+            type="password"
+            formControlName="password"
+            id="client-password"
+            autocomplete="email"
+            required
+          />
+        </app-form-field>
+      </div>
+    </div>
+
+    <div>
+      <label for="client-status" class="app__form-label">Status</label>
+      <div class="mt-2">
+        <app-form-field name="is_active">
+          <select
+            class="app__form-control"
+            id="client-status"
+            formControlName="is_active"
+          >
+            <option [ngValue]="null" disabled selected>Select status</option>
+            <option [ngValue]="true">Active</option>
+            <option [ngValue]="false">Inactive</option>
+          </select>
+        </app-form-field>
+      </div>
+    </div>
+
+    <div class="flex justify-end">
+      <a
+        class="app__btn app__btn-default max-w-20 mr-2"
+        routerLink="/clients"
+      >
+        Cancel
+      </a>
+      <button
+        type="button"
+        class="app__btn app__btn-primary max-w-20"
+        (click)="submit()"
+      >
+        Create
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,32 @@
+@layer components {
+  .app__badge {
+    @apply
+      py-1
+      px-2
+
+      rounded-md
+
+      text-secondary
+      bg-neutral;
+  }
+
+  /* Success */
+  .app__badge-success {
+    @apply text-light bg-success;
+  }
+  
+  /* Danger */
+  .app__badge-danger {
+    @apply text-light bg-danger;
+  }
+  
+  /* Info */
+  .app__badge-info {
+    @apply text-light bg-info;
+  }
+  
+  /* Warning */
+  .app__badge-warning {
+    @apply text-light bg-warning;
+  }
+}

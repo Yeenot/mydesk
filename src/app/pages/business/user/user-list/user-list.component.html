@@ -1,0 +1,51 @@
+<h2>Users</h2>
+
+<div class="flex flex-row justify-end mb-4">
+  <a
+    class="app__btn app__btn-primary max-w-20"
+    routerLink="/businesses/users/create"
+  >
+    Add
+    <app-icon class="ml-0.5" name="plus" />
+  </a>
+</div>
+<div class="overflow-x-auto">
+  <table>
+    <thead>
+      <tr>
+        <th>Email</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let business_user of users">
+        <td>{{ business_user.user.email }}</td>
+        <td>{{ business_user.user.first_name }}</td>
+        <td>{{ business_user.user.last_name }}</td>
+        <td>
+          <span
+            class="app__badge capitalize"
+            [ngClass]="{
+              'app__badge-success': business_user.user.is_active,
+              'app__badge-warning': !business_user.user.is_active,
+            }"
+          >
+            <ng-container *ngIf="business_user.user.is_active">
+              {{ UserStatus.Active }}
+            </ng-container>
+            <ng-container *ngIf="!business_user.user.is_active">
+              {{ UserStatus.Inactive }}
+            </ng-container>
+          </span>
+        </td>
+        <td>
+          <button class="mr-1"><app-icon name="pencil-square" /></button>
+          <button class="text-danger"><app-icon name="trash" /></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

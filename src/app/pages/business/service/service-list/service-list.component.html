@@ -1,0 +1,51 @@
+<h2>Services</h2>
+
+<div class="flex flex-row justify-end mb-4">
+  <a
+    class="app__btn app__btn-primary max-w-20"
+    routerLink="/businesses/services/create"
+  >
+    Add
+    <app-icon class="ml-0.5" name="plus" />
+  </a>
+</div>
+<div class="overflow-x-auto">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let service of services">
+        <td>{{ service.name }}</td>
+        <td>{{ service.description }}</td>
+        <td>{{ service.price | number:'1.2-2'}}</td>
+        <td>
+          <span
+            class="app__badge capitalize"
+            [ngClass]="{
+              'app__badge-success': service.is_active,
+              'app__badge-warning': !service.is_active,
+            }"
+          >
+            <ng-container *ngIf="service.is_active">
+              {{ ServiceStatus.Active }}
+            </ng-container>
+            <ng-container *ngIf="!service.is_active">
+              {{ ServiceStatus.Inactive }}
+            </ng-container>
+          </span>
+        </td>
+        <td>
+          <button class="mr-1"><app-icon name="pencil-square" /></button>
+          <button class="text-danger"><app-icon name="trash" /></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

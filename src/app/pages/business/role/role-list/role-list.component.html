@@ -1,0 +1,47 @@
+<h2>Roles</h2>
+
+<div class="flex flex-row justify-end mb-4">
+  <a
+    class="app__btn app__btn-primary max-w-20"
+        routerLink="/businesses/roles/create"
+  >
+    Add
+    <app-icon class="ml-0.5" name="plus" />
+  </a>
+</div>
+<div class="overflow-x-auto">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let role of roles">
+        <td>{{ role.name }}</td>
+        <td>
+          <span
+            class="app__badge capitalize"
+            [ngClass]="{
+              'app__badge-success': role.is_active,
+              'app__badge-warning': !role.is_active,
+            }"
+          >
+            <ng-container *ngIf="role.is_active">
+              {{ RoleStatus.Active }}
+            </ng-container>
+            <ng-container *ngIf="!role.is_active">
+              {{ RoleStatus.Inactive }}
+            </ng-container>
+          </span>
+        </td>
+        <td>
+          <button class="mr-1"><app-icon name="pencil-square" /></button>
+          <button class="text-danger"><app-icon name="trash" /></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
